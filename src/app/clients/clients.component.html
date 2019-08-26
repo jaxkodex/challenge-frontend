@@ -1,0 +1,26 @@
+<h3>Clientes</h3>
+<div class="row">
+  <div class="col text-right"><button type="button" class="btn btn-primary" [routerLink]="['/clients/new']">Registrar cliente</button></div>
+</div>
+<div class="row">
+  <div class="col">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Edad</th>
+              <th>Fecha de nacimiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of clients">
+              <td>{{ client.name }}</td>
+              <td>{{ client.lastName }}</td>
+              <td>{{ client.age }}</td>
+              <td>{{ client.birthDate }}</td>
+            </tr>
+          </tbody>
+        </table>        
+  </div>
+</div>

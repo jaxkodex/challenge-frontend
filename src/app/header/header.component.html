@@ -1,0 +1,4 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Challenge</a>
+  <button *ngIf="authService.isLoggedIn" class="btn btn-link" (click)="authService.logout()">Salir</button>
+</nav>

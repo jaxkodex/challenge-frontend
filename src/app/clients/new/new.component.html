@@ -1,0 +1,27 @@
+<h4>Registro de cliente</h4>
+<form>
+  <div class="form-group">
+    <label for="name">Nombres</label>
+    <input type="text" class="form-control form-control-sm" id="name" placeholder="Ej. Juan" />
+  </div>
+  <div class="form-group">
+    <label for="Apellidos">Password</label>
+    <input
+      type="text"
+      class="form-control form-control-sm"
+      id="lastname"
+      placeholder="Ej. Montalvo"
+    />
+  </div>
+  <div class="form-group">
+    <label for="birthdate">Fecha de nacimiento</label>
+    <input
+      type="text"
+      class="form-control form-control-sm"
+      id="birthdate"
+      placeholder="Ej. 01/01/2019"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Registrar</button>&nbsp;
+  <button type="button" class="btn btn-light" [routerLink]="['/clients']">Cancelar</button>
+</form>
