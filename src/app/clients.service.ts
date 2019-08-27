@@ -5,11 +5,13 @@ import { Client, ClientListResults } from "./client";
 import { AuthService } from "./auth/auth.service";
 import { Observable } from "rxjs";
 
+import {environment} from '../environments/environment'
+
 @Injectable({
   providedIn: "root"
 })
 export class ClientsService {
-  private url = "http://localhost:8080/clients";
+  private url = environment.baseUrl+"/clients";
 
   constructor(
     private httpClient: HttpClient,
