@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 import { ClientsService } from '../../clients.service'
 
@@ -9,7 +10,7 @@ import { ClientsService } from '../../clients.service'
 })
 export class NewComponent implements OnInit {
 
-  constructor(private clientsService: ClientsService) { }
+  constructor(private clientsService: ClientsService, public router: Router) { }
 
   ngOnInit() {
   }
@@ -17,7 +18,7 @@ export class NewComponent implements OnInit {
   async create(name, lastName, birthDate) {
     let p = await this.clientsService.create({name, lastName, birthDate, age: 0})
     p.subscribe(result => {
-      console.log(result)
+      this.router.navigate(["clients"]);
     }, () => alert('Error!'))
   }
 
