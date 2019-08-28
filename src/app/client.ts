@@ -8,3 +8,8 @@ export interface Client {
 export interface ClientListResults {
     clients: Client[]
 }
+
+export interface ClientStats {
+    average: number
+    standardDeviation: number
+}

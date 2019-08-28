@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
-import { Client, ClientListResults } from "./client";
+import { Client, ClientListResults, ClientStats } from "./client";
 import { AuthService } from "./auth/auth.service";
 import { Observable } from "rxjs";
 
@@ -12,6 +12,7 @@ import {environment} from '../environments/environment'
 })
 export class ClientsService {
   private url = environment.baseUrl+"/clients";
+  private REQUEST_SIZE = '999999'
 
   constructor(
     private httpClient: HttpClient,
@@ -32,6 +33,21 @@ export class ClientsService {
     return this.httpClient.get<ClientListResults>(this.url, {
       headers: {
         Authorization: "Bearer " + token
+      },
+      params: {
+        size: this.REQUEST_SIZE
+      }
+    })
+  }
+
+  public async getStats(): Promise<Observable<ClientStats>> {
+    let token = await this.authService.user.getIdToken();
+    return this.httpClient.get<ClientStats>(this.url+'/kpi', {
+      headers: {
+        Authorization: "Bearer " + token
+      },
+      params: {
+        size: this.REQUEST_SIZE
       }
     });
   }

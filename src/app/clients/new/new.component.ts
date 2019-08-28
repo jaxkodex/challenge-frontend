@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 
+import * as moment from 'moment'
+
 import { ClientsService } from '../../clients.service'
 
 @Component({
@@ -16,7 +18,16 @@ export class NewComponent implements OnInit {
   }
 
   async create(name, lastName, birthDate) {
-    let p = await this.clientsService.create({name, lastName, birthDate, age: 0})
+    if (!name || !lastName || !birthDate) {
+      alert('Por favor ingrese toda la información del formulario')
+      return
+    }
+    if (!moment(birthDate).isValid()) {
+      alert('La fecha no es válida')
+      return
+    }
+    let s = moment(birthDate).toDate()
+    let p = await this.clientsService.create({name, lastName, birthDate: s, age: 0})
     p.subscribe(result => {
       this.router.navigate(["clients"]);
     }, () => alert('Error!'))

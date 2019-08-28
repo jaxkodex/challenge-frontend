@@ -1,6 +1,7 @@
 <h3>Clientes</h3>
 <div class="row">
-  <div class="col text-right"><button type="button" class="btn btn-primary" [routerLink]="['/clients/new']">Registrar cliente</button></div>
+    <div class="col-sm p-3 text-left"><button type="button" class="btn btn-primary" [routerLink]="['']">Inicio</button></div>
+    <div class="col-sm p-3 text-right"><button type="button" class="btn btn-primary" [routerLink]="['/clients/new']">Registrar cliente</button></div>
 </div>
 <div class="row">
   <div class="col">
@@ -18,7 +19,7 @@
               <td>{{ client.name }}</td>
               <td>{{ client.lastName }}</td>
               <td>{{ client.age }}</td>
-              <td>{{ client.birthDate }}</td>
+              <td>{{ client.birthDate | date: 'dd/MM/yyyy'}}</td>
             </tr>
           </tbody>
         </table>        

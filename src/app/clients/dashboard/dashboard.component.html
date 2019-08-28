@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col p-3">
+        <button type="button" class="btn btn-light" [routerLink]="['/clients']">Ver clientes</button>
+    </div>
+</div>
+<div class="row">
+        <div class="col">
+            <canvas id="myChart" width="400" height="300"></canvas>
+        </div>
+        <div class="col">
+            <ul>
+                    <li>Promedio de edades: {{stats?.average | number:'1.1-2'}}</li>
+                    <li>Desviación estándar: {{stats?.standardDeviation | number:'1.1-2'}}</li>
+            </ul>
+        </div>
+    </div>

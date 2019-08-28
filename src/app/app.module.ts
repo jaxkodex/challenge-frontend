@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { NewComponent } from './clients/new/new.component';
 import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './clients/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
     ClientsComponent,
     LoginComponent,
     NewComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

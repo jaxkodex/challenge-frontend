@@ -13,7 +13,7 @@ export const environment = {
     messagingSenderId: "753544292219",
     appId: "1:753544292219:web:433933db019fe982"
   },
-  baseUrl: 'http://localhost:8080'
+  baseUrl: 'https://api.acepta.xyz'
 };
 
 /*
